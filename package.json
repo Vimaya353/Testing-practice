@@ -1,0 +1,16 @@
+
+{
+  "name": "testing-practice",
+  "version": "1.0.0",
+  "description": "Odin Project Testing Practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-jest": "^30.0.0",
+    "jest": "^30.0.0"
+  }
+}
