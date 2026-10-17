@@ -2,7 +2,8 @@
 import {
   capitalize,
   reverseString,
-  calculator
+  calculator,
+  caesarCipher
 } from "../functions";
 
 describe("capitalize", () => {
@@ -44,3 +45,31 @@ describe("calculator", () => {
     expect(calculator.multiply(4, 3)).toBe(12);
   });
 });
+
+
+describe("caesarCipher", () => {
+  test("shifts letters by the given factor", () => {
+    expect(caesarCipher("hello", 3)).toBe("khoor");
+  });
+
+  test("wraps from z to a", () => {
+    expect(caesarCipher("xyz", 3)).toBe("abc");
+  });
+
+  test("preserves uppercase and lowercase letters", () => {
+    expect(caesarCipher("HeLLo", 3)).toBe("KhOOr");
+  });
+
+  test("preserves punctuation and spaces", () => {
+    expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+  });
+
+  test("works with a shift larger than 26", () => {
+    expect(caesarCipher("abc", 29)).toBe("def");
+  });
+
+  test("works with a shift of zero", () => {
+    expect(caesarCipher("Hello!", 0)).toBe("Hello!");
+  });
+});
+
