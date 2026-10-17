@@ -3,7 +3,8 @@ import {
   capitalize,
   reverseString,
   calculator,
-  caesarCipher
+  caesarCipher,
+  analyzeArray
 } from "../functions";
 
 describe("capitalize", () => {
@@ -72,4 +73,44 @@ describe("caesarCipher", () => {
     expect(caesarCipher("Hello!", 0)).toBe("Hello!");
   });
 });
+
+
+describe("analyzeArray", () => {
+  test("returns average, min, max, and length", () => {
+    expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+      average: 4,
+      min: 1,
+      max: 8,
+      length: 6
+    });
+  });
+
+  test("works with a single number", () => {
+    expect(analyzeArray([5])).toEqual({
+      average: 5,
+      min: 5,
+      max: 5,
+      length: 1
+    });
+  });
+
+  test("works with negative numbers", () => {
+    expect(analyzeArray([-2, -4, -6])).toEqual({
+      average: -4,
+      min: -6,
+      max: -2,
+      length: 3
+    });
+  });
+
+  test("works with decimal numbers", () => {
+    expect(analyzeArray([1.5, 2.5])).toEqual({
+      average: 2,
+      min: 1.5,
+      max: 2.5,
+      length: 2
+    });
+  });
+});
+
 
