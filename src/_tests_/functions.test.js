@@ -1,7 +1,8 @@
 
 import {
   capitalize,
-  reverseString
+  reverseString,
+  calculator
 } from "../functions";
 
 describe("capitalize", () => {
@@ -21,5 +22,25 @@ describe("reverseString", () => {
 
   test("works with a single character", () => {
     expect(reverseString("a")).toBe("a");
+  });
+});
+
+
+
+describe("calculator", () => {
+  test("adds two numbers", () => {
+    expect(calculator.add(2, 3)).toBe(5);
+  });
+
+  test("subtracts two numbers", () => {
+    expect(calculator.subtract(5, 3)).toBe(2);
+  });
+
+  test("divides two numbers", () => {
+    expect(calculator.divide(10, 2)).toBe(5);
+  });
+
+  test("multiplies two numbers", () => {
+    expect(calculator.multiply(4, 3)).toBe(12);
   });
 });
